@@ -1,9 +1,0 @@
-PySide2
-xlrd
-xlwt
-xlsxwriter
-openpyxl
-numpy
-pandas
-transformers
-sklearn
