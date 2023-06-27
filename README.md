@@ -5,3 +5,9 @@
   <br>3、运行cost_compare.py，开始分析<br>
 
 <br>简明操作指引<br>
+<br>![操作界面](https://github.com/jason449154834/cost-comparison-tools/blob/main/pic/%E6%93%8D%E4%BD%9C%E7%95%8C%E9%9D%A2.png)<br>
+<br>基准项目、对比项目：选择2个对比项目的xlsx格式文件<br>
+<br>序号、项目编码、项目名称、项目特征、计量单位、工程量、单价：此内容在所选择的文件中，首次出现处于第几列。例：项目名称在B及C列（被合并单元格），则设置为1（A为0，B为1，C为2，依此类推）<br>
+<br><br>
+<br><br>
+<br><br>
