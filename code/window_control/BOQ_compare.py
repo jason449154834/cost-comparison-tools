@@ -255,6 +255,7 @@ class compare_result():
             largest_elements = sorted_list[:n]
             return [element[0] for element in largest_elements],sorted(lst, reverse=True)[:n]
         #按单位类别遍历
+        compare_count=int(self.ui.spinBox_compare_BOQ.value())
         for i in range(6):
             if len(self.base_data.text_token_group[i])>1 and len(self.compare_data.text_token_group[i])>1 :
                 similarity = cosine_similarity(self.base_data.text_token_group[i], self.compare_data.text_token_group[i])
@@ -262,7 +263,7 @@ class compare_result():
                 a = 0
                 for j in similarity:
                     #最高前n项在对比清单所在位置及其值
-                    similarity_lagest,similarity_lagest_value = find_largest_elements(j, int(self.ui.spinBox_compare_BOQ.value()))
+                    similarity_lagest,similarity_lagest_value = find_largest_elements(j, compare_count)
                     #print(similarity_lagest,similarity_lagest_value)
                     #返回在原始数据中ID
                     compare_id_list = []
@@ -273,6 +274,13 @@ class compare_result():
                     self.base_id.append(self.base_data.Measurement_group[i][a])
                     self.similarity_value.append(similarity_lagest_value)
                     a += 1
+            else:
+                for j in range(len(self.base_data.text_token_group[i])):
+                    self.compare_id.append([0 for i in range(compare_count)])
+                    self.base_id.append(self.base_data.Measurement_group[i][j])
+                    self.similarity_value.append([0 for i in range(compare_count)])
+
+
         #print('base_id:',self.base_id)
         #print('compare_id:',self.compare_id)
         #print('similarity_value:',self.similarity_value)
