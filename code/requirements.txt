@@ -6,4 +6,4 @@ openpyxl
 numpy
 pandas
 transformers
-sklearn
+scikit-learn
